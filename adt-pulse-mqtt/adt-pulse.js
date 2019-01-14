@@ -35,7 +35,7 @@ module.exports = pulse;
 
 	this.config = {
 		baseUrl: 'https://portal.adtpulse.com',
-		prefix: '/myhome/10.0.0-60',
+		prefix: '/myhome/13.0.0-153',
 		initialURI: '/',
 		signinURI: '/access/signin.jsp',
 		authURI: '/access/signin.jsp?e=n&e=n&&partner=adt',
@@ -43,7 +43,7 @@ module.exports = pulse;
 		summaryURI: '/summary/summary.jsp',
 		statusChangeURI: '/quickcontrol/serv/ChangeVariableServ',
 		armURI: '/quickcontrol/serv/RunRRACommand',
-		disarmURI: '/quickcontrol/armDisarmRRA.jsp?href=rest/adt/ui/client/security/setArmState',
+		disarmURI: '/quickcontrol/armDisarm.jsp?href=rest/adt/ui/client/security/setArmState',
 		otherStatusURI: '/ajax/currentStates.jsp',
 		syncURI: '/Ajax/SyncCheckServ',
 		logoutURI: '/access/signout.jsp',
