@@ -5,7 +5,7 @@ Integrates ADT Pulse to Home Assistant. You can also choose to add the ADT Pulse
 SmartApp allows automatic running our Routines upon alarm changing states.
 
 ## Hassio Setup
-Add the repository (https://github.com/haruny/adt-pulse-mqtt/) to Hassio.
+Add the repository (https://github.com/digitalcraig/adt-pulse-mqtt) to Hassio.
 Hit Install. Don't forget to configure `pulse_login` with your ADT Pulse Portal username and password. I recommend using a separate login for Home Assistant use. 
 You'll need an MQTT broker to run this. I'm using Mosquitto broker (https://www.home-assistant.io/addons/mosquitto/).
 
@@ -32,9 +32,10 @@ After running the add-on, to list all the zones found, you can call:
 # mosquitto_sub -h YOUR_MQTT_IP -v -t "adt/zone/#"
 </pre>
 
-Add the following to the configuration.yaml for each zone:
+Add the following to the configuration.yaml for each zone in binary_sensor:
 
 <pre>
+binary_sensor:
   - platform: mqtt
     name: "Kitchen Door"
     state_topic: "adt/zone/Kitchen Door/state"
@@ -45,6 +46,15 @@ Add the following to the configuration.yaml for each zone:
     value_template: '{{ value_json.status }}' 
 </pre>
 Note: State topic names come from your Pulse configuration.
+
+The possibible state values are:
+
+  * devStatOK (device okay)
+  * devStatOpen (door/window opened)
+  *        devStatMotion (detected motion)
+	*        devStatTamper (glass broken or device tamper)
+	*        devStatAlarm (detected CO/Smoke)
+	*        devStatUnknown (device offline)
 
 I'm limited with what I have as zones, for different devices please submit your MQTT dump (for the zones) in issues. I'll try to add the support for it.
 
