@@ -14,9 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "mqtt": "^2.13.0",
-    "cheerio": "latest",
+    "cheerio": "0.22.0",
     "q": "~1.0.1",
-    "request": "latest",
+    "request": "2.88.2",
     "tough-cookie": "^2.3.0",
     "lodash": "^4.17.15"
   }
