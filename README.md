@@ -1,3 +1,8 @@
+# DEFUNCT!
+
+As of 1/25/2021 This repo is no longer maintained. Please see https://github.com/digitalcraig/adt-pulse-mqtt 
+
+
 # adt-pulse-mqtt
 ADT Pulse bridge for Home Assistant using MQTT. 
 
